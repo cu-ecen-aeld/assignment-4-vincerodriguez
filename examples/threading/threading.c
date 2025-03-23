@@ -12,7 +12,7 @@ void* threadfunc(void* thread_param)
 {
     struct thread_data *data = (struct thread_data *)thread_param; 
 
-    usleep(data -> wait_to_release_ms * 1000); 
+    usleep(data->wait_to_release_ms * 1000); 
 
     if(pthread_mutex_lock(data->mutex) != 0)
     {
@@ -69,7 +69,7 @@ bool start_thread_obtaining_mutex(pthread_t *thread, pthread_mutex_t *mutex,int 
         ERROR_LOG("pthread_create failed!\n"); 
         return false; 
     }
-    
+
     return true;
 }
 
